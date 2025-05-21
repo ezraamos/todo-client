@@ -1,0 +1,9 @@
+services:
+  todo-app:
+    container_name: todo-app
+    image: ezraamos/todo:${IMAGE_TAG}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
