@@ -3,6 +3,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getTodos, createTodo, updateTodo, deleteTodo } from "../api";
 import { useState } from "react";
 
+interface Todo {
+  id: number;
+  description: string;
+  completed: boolean;
+}
+
 export default function Home() {
   const queryClient = useQueryClient();
   const [newTodo, setNewTodo] = useState("");
@@ -88,7 +94,7 @@ export default function Home() {
       </form>
 
       <ul>
-        {todos?.map((todo: any) => (
+        {todos?.map((todo: Todo) => (
           <li
             key={todo.id}
             className="flex items-center justify-between mb-2 p-2 bg-gray-100 rounded"

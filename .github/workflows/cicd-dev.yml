@@ -1,4 +1,4 @@
-name: Deploy Next.js application
+name: Deploy Todo in Dev Environment
 
 on:
   push:
