@@ -44,6 +44,6 @@ jobs:
           script: |
             cd app
             echo "IMAGE_TAG=${{ github.sha }}" >> .env
-            docker-compose down || true
-            docker-compose up -d
+            docker compose down || true
+            docker compose up -d
             docker image prune -a -f
