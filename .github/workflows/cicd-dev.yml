@@ -44,7 +44,7 @@ jobs:
           script: |
             sudo mv /home/ubuntu/app/docker-compose.yml /var/www/todo/frontend/docker-compose.yml
             cd /var/www/todo/frontend
-            echo "IMAGE_TAG=${{ github.sha }}" >> .env
+            sudo echo "IMAGE_TAG=${{ github.sha }}" >> .env
             docker-compose down || true
             docker-compose up -d
             docker image prune -a -f
