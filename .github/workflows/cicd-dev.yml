@@ -33,7 +33,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "docker-compose.yml"
-          target: "/var/www/todo/frontend"
+          target: "/home/ubuntu/app/"
 
       - name: Deploy to EC2 using SSH
         uses: appleboy/ssh-action@v1.2.2
@@ -42,6 +42,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            sudo mv /home/ubuntu/app/docker-compose.yml /var/www/todo/frontend/docker-compose.yml
             cd /var/www/todo/frontend
             echo "IMAGE_TAG=${{ github.sha }}" >> .env
             docker-compose down || true
