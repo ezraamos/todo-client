@@ -38,7 +38,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "docker-compose.yml,.env"
-          target: "var/www/todo/frontend/"
+          target: "/var/www/todo/frontend/"
 
       - name: Deploy to EC2 using SSH
         uses: appleboy/ssh-action@v1.2.2
