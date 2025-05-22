@@ -31,14 +31,14 @@ jobs:
           cat <<EOF > .env
           NEXT_PUBLIC_API_BASE_URL=${{ vars.NEXT_PUBLIC_API_BASE_URL }}
 
-      - name: Copy docker-compose.yml to EC2
+      - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "docker-compose.yml,.env"
-          target: "var/www/todo/frontend"
+          target: "var/www/todo/frontend/"
 
       - name: Deploy to EC2 using SSH
         uses: appleboy/ssh-action@v1.2.2
