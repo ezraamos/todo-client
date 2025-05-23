@@ -1,4 +1,3 @@
-version: "3"
 services:
   todo-app:
     container_name: todo-app
