@@ -1,6 +1,6 @@
 "use client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getTodos, createTodo, updateTodo, deleteTodo } from "../api";
+import { getTodos, createTodo, updateTodo, deleteTodo } from "../actions";
 import { useState } from "react";
 
 interface Todo {
