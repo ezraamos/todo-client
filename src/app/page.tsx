@@ -1,13 +1,13 @@
 "use client";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getTodos, createTodo, updateTodo, deleteTodo } from "../api";
-import { useState } from "react";
+// import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+// import { getTodos, createTodo, updateTodo, deleteTodo } from "../api";
+// import { useState } from "react";
 
-interface Todo {
-  id: number;
-  description: string;
-  completed: boolean;
-}
+// interface Todo {
+//   id: number;
+//   description: string;
+//   completed: boolean;
+// }
 console.log("TESTTT", process.env.NEXT_PUBLIC_API_BASE_URL as string);
 console.log("heree");
 export default function Home() {
