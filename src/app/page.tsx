@@ -10,6 +10,9 @@
 // }
 console.log("TESTTT", process.env.NEXT_PUBLIC_API_BASE_URL as string);
 console.log("heree");
+
+console.log("TEST2", process.env["NEXT_PUBLIC_API_BASE_URL"] as string);
+console.log("TEST3", process.env["NEXT_PUBLIC_API_BASE_URL"]);
 export default function Home() {
   // const queryClient = useQueryClient();
   // const [newTodo, setNewTodo] = useState("");
